@@ -10,6 +10,7 @@ namespace AutoWebTest
 {
     class CommonTest
     {
+        static public IWebDriver _driver;
         string browser;
 
         public CommonTest(string browser)
