@@ -15,8 +15,8 @@ namespace AutoWebTest
         public static void LoadURL()
         {
             _driver.Navigate().GoToUrl("https://teams.microsoft.com/");
-
             LogClass.UrlLoaded();
+            Wait();
         }
 
         public static void EnterMail()
@@ -24,6 +24,7 @@ namespace AutoWebTest
             IWebElement login = _driver.FindElement(By.Name("loginfmt"));
             login.SendKeys("dlp.automation3@safeticadlptesting.onmicrosoft.com");
             login.SendKeys(Keys.Enter);
+            Wait();
         }
 
         public static void EnterPassw()
@@ -31,11 +32,13 @@ namespace AutoWebTest
             IWebElement passw = _driver.FindElement(By.Name("passwd"));
             passw.SendKeys("Password.dlp");
             passw.SendKeys(Keys.Enter);
+            Wait();
         }
 
         public static void StayNotLogged()
         {
             _driver.FindElement(By.Id("idBtn_Back")).Click();
+            Wait();
         }
 
         public static void QuitBrowser()
@@ -43,6 +46,6 @@ namespace AutoWebTest
             _driver.Quit();
         }
 
-        public void Wait() { Thread.Sleep(4000); }
+        public static void Wait() { Thread.Sleep(4000); }
     }
 }
