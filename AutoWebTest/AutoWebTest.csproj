@@ -63,6 +63,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Teams.cs" />
+    <Compile Include="TeamsChromeTest.cs" />
+    <Compile Include="TeamsFirefoxTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

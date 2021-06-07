@@ -12,33 +12,33 @@ namespace AutoWebTest
     {
         static IWebDriver _driver = CommonTest._driver;
 
-        public void LoadURL()
+        public static void LoadURL()
         {
             _driver.Navigate().GoToUrl("https://teams.microsoft.com/");
 
             LogClass.UrlLoaded();
         }
 
-        public void EnterMail()
+        public static void EnterMail()
         {
             IWebElement login = _driver.FindElement(By.Name("loginfmt"));
             login.SendKeys("dlp.automation3@safeticadlptesting.onmicrosoft.com");
             login.SendKeys(Keys.Enter);
         }
 
-        public void EnterPassw()
+        public static void EnterPassw()
         {
             IWebElement passw = _driver.FindElement(By.Name("passwd"));
             passw.SendKeys("Password.dlp");
             passw.SendKeys(Keys.Enter);
         }
 
-        public void StayNotLogged()
+        public static void StayNotLogged()
         {
             _driver.FindElement(By.Id("idBtn_Back")).Click();
         }
 
-        public void QuitBrowser()
+        public static void QuitBrowser()
         {
             _driver.Quit();
         }
