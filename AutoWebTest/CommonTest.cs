@@ -12,7 +12,7 @@ namespace AutoWebTest
     [TestFixture("FireFox")]
     class CommonTest
     {
-        IWebDriver _driver;
+        static public IWebDriver _driver;
         string browser;
 
         public CommonTest(string browser)

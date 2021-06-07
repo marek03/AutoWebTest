@@ -13,12 +13,22 @@ namespace AutoWebTest
 
         public static void RunningTest(string browser)
         {
-            file.WriteLine("Running {0} test", browser);
+            file.WriteLine("Running {0} test.", browser);
+        }
+
+        public static void UrlLoaded()
+        {
+            file.WriteLine("Web successfully loaded.");
         }
 
         public static void TestResult()
         {
             
+        }
+
+        public static void CloseFile()
+        {
+            file.Close();
         }
     }
 }
