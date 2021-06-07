@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace AutoWebTest
 {
+    [TestFixture("Chrome")]
+    [TestFixture("FireFox")]
     class CommonTest
     {
         static public IWebDriver _driver;
@@ -21,6 +23,7 @@ namespace AutoWebTest
         [SetUp]
         public void SetUp()
         {
+            _driver = Driver.GetDriver(browser);
             LogClass.RunningTest(browser);
         }
 
