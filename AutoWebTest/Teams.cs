@@ -15,6 +15,7 @@ namespace AutoWebTest
         public static void LoadURL()
         {
             _driver.Navigate().GoToUrl("https://teams.microsoft.com/");
+            
             LogClass.UrlLoaded();
             Wait();
         }
@@ -38,11 +39,20 @@ namespace AutoWebTest
         public static void StayNotLogged()
         {
             _driver.FindElement(By.Id("idBtn_Back")).Click();
+            Thread.Sleep(45000);
         }
 
-        public static void ToAutomation()
+        public static void SendMessage()
         {
-
+            _driver.FindElement(By.Id("app-bar-2a84919f-59d8-4441-a975-2a8c2643b741")).Click(); //kliknutí na tlačítko týmy
+            Wait();
+            _driver.FindElement(By.ClassName("channel-anchor")).Click(); //kliknutí na tlačítko test
+            Wait();
+            _driver.FindElement(By.Id("new-post-button")).Click(); //kliknutí na tlačítko nová konverzace
+            Wait();
+            IWebElement textbox = _driver.FindElement(By.XPath("//*[@id='cke_50_contents']/div"));
+            textbox.SendKeys("Message");
+            textbox.SendKeys(Keys.Enter);
         }
 
         public static void QuitBrowser()
@@ -50,6 +60,6 @@ namespace AutoWebTest
             _driver.Quit();
         }
 
-        public static void Wait() { Thread.Sleep(4000); }
+        public static void Wait() { Thread.Sleep(2000); }
     }
 }
