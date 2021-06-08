@@ -27,13 +27,30 @@ namespace AutoWebTest
         [Test]
         public void SendFile()
         {
+            try
+            {
+                Teams.SendFile();
+            }
+            catch
+            {
+                Teams.TryAgain();
+                Teams.SendFile();
+            }
 
         }
 
         [Test]
         public void SendMessage()
         {
-            //Teams.SendMessage();
+            try
+            {
+                Teams.SendMessage();
+            }
+            catch
+            {
+                Teams.TryAgain();
+                Teams.SendMessage();
+            }        
         }
 
         [TearDown]
