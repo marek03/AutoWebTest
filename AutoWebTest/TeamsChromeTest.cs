@@ -33,13 +33,13 @@ namespace AutoWebTest
         [Test]
         public void SendMessage()
         {
-            Teams.SendMessage();
+            //Teams.SendMessage();
         }
 
         [TearDown]
         public void TearDown()
         {
-            Teams.QuitBrowser();
+            //Teams.QuitBrowser();
         }
     }
 }
