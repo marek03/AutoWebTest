@@ -39,7 +39,7 @@ namespace AutoWebTest
         [TearDown]
         public void TearDown()
         {
-            //Teams.QuitBrowser();
+            Teams.QuitBrowser();
         }
     }
 }
