@@ -38,7 +38,11 @@ namespace AutoWebTest
         public static void StayNotLogged()
         {
             _driver.FindElement(By.Id("idBtn_Back")).Click();
-            Wait();
+        }
+
+        public static void ToAutomation()
+        {
+
         }
 
         public static void QuitBrowser()
