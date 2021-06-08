@@ -15,7 +15,7 @@ namespace AutoWebTest
         public static void LoadURL()
         {
             _driver.Manage().Window.Maximize();
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(45);
             _driver.Navigate().GoToUrl("https://teams.microsoft.com/");
             
             LogClass.UrlLoaded();
@@ -53,13 +53,13 @@ namespace AutoWebTest
 
         public static void SendMessage()
         {
-            _driver.FindElement(By.Id("app-bar-2a84919f-59d8-4441-a975-2a8c2643b741")).Click(); //kliknutí na tlačítko týmy
+            //_driver.FindElement(By.Id("app-bar-2a84919f-59d8-4441-a975-2a8c2643b741")).Click(); //kliknutí na tlačítko týmy
             
-            _driver.FindElement(By.ClassName("channel-anchor")).Click(); //kliknutí na tlačítko test
+            _driver.FindElement(By.LinkText("Test")).Click(); //kliknutí na tlačítko test
             
             _driver.FindElement(By.Id("new-post-button")).Click(); //kliknutí na tlačítko nová konverzace
             
-            IWebElement textbox = _driver.FindElement(By.XPath("//*[@id=\"cke_50_contents\"]/div"));
+            IWebElement textbox = _driver.FindElement(By.LinkText("Začněte novou konverzaci. Chcete-li někoho zmínit, napiště @."));
             textbox.SendKeys("Message");
             textbox.SendKeys(Keys.Enter);
         }

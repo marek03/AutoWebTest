@@ -27,7 +27,8 @@ namespace AutoWebTest
         [Test]
         public void SendFile()
         {
-            try
+            Teams.SendFile();
+            /*try
             {
                 Teams.SendFile();
             }
@@ -35,22 +36,23 @@ namespace AutoWebTest
             {
                 Teams.TryAgain();
                 Teams.SendFile();
-            }
+            }*/
 
         }
 
         [Test]
         public void SendMessage()
         {
-            try
+            Teams.SendMessage();
+            /*try
             {
-                Teams.SendMessage();
+                Teams.SendMessage();            mužu použit assert pak třeba 
             }
             catch
             {
                 Teams.TryAgain();
                 Teams.SendMessage();
-            }        
+            }   */
         }
 
         [TearDown]
