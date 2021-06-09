@@ -57,7 +57,7 @@ namespace AutoWebTest
             
             _driver.FindElement(By.LinkText("Test")).Click(); //kliknutí na tlačítko test
             _driver.FindElement(By.Id("new-post-button")).Click(); //kliknutí na tlačítko nová konverzace
-            _driver.FindElement(By.XPath("/html/body/div[1]/div/div/div[2]/div/button[2]")).Click();
+            _driver.FindElement(By.XPath("/html/body/div[1]/div/div/div[2]/div/button[2]")).Click(); //zavře vyskakovací okno
             IWebElement textbox = _driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div[2]/div[1]/div/messages-header/div[2]/div/message-pane/div/div[3]/new-message/div/div[2]/form/div[3]/div[1]/div[3]/div/div/div[2]/div/div/div"));
             textbox.SendKeys("Message");
             textbox.SendKeys(Keys.Enter);
@@ -67,9 +67,9 @@ namespace AutoWebTest
         {
             _driver.FindElement(By.LinkText("Obecné")).Click(); // kliknutí na tlačíko obecné
             _driver.FindElement(By.Id("new-post-button")).Click(); //kliknutí na tlačítko nová konverzace
-            _driver.FindElement(By.XPath("/html/body/div[1]/div/div/div[2]/div/button[2]")).Click();
-            _driver.FindElement(By.XPath("/html/body/div[2]/div[2]/div[2]/div[1]/div/messages-header/div[2]/div/message-pane/div/div[3]/new-message/div/div[3]/div[1]/div/button/svg")).Click();
-            _driver.FindElement(By.LinkText("OneDrive")).Click();
+            _driver.FindElement(By.XPath("/html/body/div[1]/div/div/div[2]/div/button[2]")).Click(); // zavře vyskakovací okno
+            _driver.FindElement(By.ClassName("icons-attachment")).Click();
+            _driver.FindElement(By.XPath("/html/body/div[6]/div/files-with-navigation/div/files-navigation/div/ul/ul/li[3]/button")).Click();
 
         }
 
