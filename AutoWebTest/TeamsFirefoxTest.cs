@@ -19,27 +19,28 @@ namespace AutoWebTest
         public void SetUp()
         {
             Teams.LoadURL();
+            Teams.AdvancedButton();
             Teams.EnterMail();
             Teams.EnterPassw();
-            Teams.StayNotLogged();
+            Teams.StayNotLogged(); 
         }
 
         [Test]
         public void SendTwoFiles()
         {
-
+            Teams.SendTwoFiles();
         }
 
         [Test]
         public void SendThreeMessages()
         {
-
+            Teams.SendThreeMessages();
         }
 
         [TearDown]
         public void TearDown()
         {
-            Teams.QuitBrowser();
+            //Teams.QuitBrowser();
         }
     }
 }

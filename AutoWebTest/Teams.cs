@@ -15,7 +15,7 @@ namespace AutoWebTest
         public static void LoadURL()
         {
             _driver.Manage().Window.Maximize();
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(45);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
             _driver.Navigate().GoToUrl("https://teams.microsoft.com/");
             
             LogClass.UrlLoaded();
@@ -70,6 +70,27 @@ namespace AutoWebTest
             _driver.FindElement(By.XPath("/html/body/div[1]/div/div/div[2]/div/button[2]")).Click(); // zavře vyskakovací okno
             _driver.FindElement(By.ClassName("icons-attachment")).Click();
             _driver.FindElement(By.XPath("/html/body/div[6]/div/files-with-navigation/div/files-navigation/div/ul/ul/li[3]/button")).Click();
+            _driver.FindElement(By.XPath("/html/body/div[6]/div/files-with-navigation/div/div/div[1]/files-personal-dialog/div/div/files-list/div/div/div/div[2]/div/div[1]/div[1]/div[5]")).Click();
+            _driver.FindElement(By.XPath("/html/body/div[6]/div/files-with-navigation/div/div/div[2]/div/div[2]/button")).Click();
+            _driver.FindElement(By.XPath("/html/body/div[6]/div[2]/div/div/div/div[3]/div[2]/div[3]/button")).Click();
+            Wait();
+            _driver.FindElement(By.ClassName("icons-send")).Click();
+        }
+
+        public static void AdvancedButton()
+        {
+            //_driver.FindElement(By.Id("advancedButton")).Click();
+            //_driver.FindElement(By.Id("exceptionDialogButton")).Click();
+            _driver.FindElement(By.LinkText("Rozšířené...")).Click();
+        }
+
+        public static void SendThreeMessages()
+        {
+
+        }
+
+        public static void SendTwoFiles()
+        {
 
         }
 
@@ -78,6 +99,6 @@ namespace AutoWebTest
             _driver.Quit();
         }
 
-        public static void Wait() { Thread.Sleep(1500); }
+        public static void Wait() { Thread.Sleep(3000); }
     }
 }

@@ -28,37 +28,18 @@ namespace AutoWebTest
         public void SendFile()
         {
             Teams.SendFile();
-            /*try
-            {
-                Teams.SendFile();
-            }
-            catch
-            {
-                Teams.TryAgain();
-                Teams.SendFile();
-            }*/
-
         }
 
         [Test]
         public void SendMessage()
         {
             Teams.SendMessage();
-            /*try
-            {
-                Teams.SendMessage();            mužu použit assert pak třeba 
-            }
-            catch
-            {
-                Teams.TryAgain();
-                Teams.SendMessage();
-            }   */
         }
 
         [TearDown]
         public void TearDown()
         {
-            //Teams.QuitBrowser();
+            Teams.QuitBrowser();
         }
     }
 }
