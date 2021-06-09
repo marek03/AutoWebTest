@@ -56,16 +56,20 @@ namespace AutoWebTest
             //_driver.FindElement(By.Id("app-bar-2a84919f-59d8-4441-a975-2a8c2643b741")).Click(); //kliknutí na tlačítko týmy
             
             _driver.FindElement(By.LinkText("Test")).Click(); //kliknutí na tlačítko test
-            
             _driver.FindElement(By.Id("new-post-button")).Click(); //kliknutí na tlačítko nová konverzace
-            
-            IWebElement textbox = _driver.FindElement(By.LinkText("Začněte novou konverzaci. Chcete-li někoho zmínit, napiště @."));
+            _driver.FindElement(By.XPath("/html/body/div[1]/div/div/div[2]/div/button[2]")).Click();
+            IWebElement textbox = _driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div[2]/div[1]/div/messages-header/div[2]/div/message-pane/div/div[3]/new-message/div/div[2]/form/div[3]/div[1]/div[3]/div/div/div[2]/div/div/div"));
             textbox.SendKeys("Message");
             textbox.SendKeys(Keys.Enter);
         }
 
         public static void SendFile()
         {
+            _driver.FindElement(By.LinkText("Obecné")).Click(); // kliknutí na tlačíko obecné
+            _driver.FindElement(By.Id("new-post-button")).Click(); //kliknutí na tlačítko nová konverzace
+            _driver.FindElement(By.XPath("/html/body/div[1]/div/div/div[2]/div/button[2]")).Click();
+            _driver.FindElement(By.XPath("/html/body/div[2]/div[2]/div[2]/div[1]/div/messages-header/div[2]/div/message-pane/div/div[3]/new-message/div/div[3]/div[1]/div/button/svg")).Click();
+            _driver.FindElement(By.LinkText("OneDrive")).Click();
 
         }
 
@@ -74,6 +78,6 @@ namespace AutoWebTest
             _driver.Quit();
         }
 
-        public static void Wait() { Thread.Sleep(2000); }
+        public static void Wait() { Thread.Sleep(1500); }
     }
 }
