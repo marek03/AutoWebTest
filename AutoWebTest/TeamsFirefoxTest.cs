@@ -19,7 +19,6 @@ namespace AutoWebTest
         public void SetUp()
         {
             Teams.LoadURL();
-            Teams.AdvancedButton();
             Teams.EnterMail();
             Teams.EnterPassw();
             Teams.StayNotLogged(); 
